@@ -1,8 +1,9 @@
 import React from "react";
-import Layout from "../components/layout";
+import Layout from "../components/Layout/Layout";
 import Img from "gatsby-image";
 import styled from "styled-components";
-import indexSyles from "./index.module.css";
+import indexStyles from "./index.module.css";
+import Button from "../components/Button/Button";
 
 const InnerWrap = styled.div`
 	display: grid;
@@ -25,14 +26,33 @@ const IndexText = styled.div`
 export default (props) => (
 	<Layout>
 		<InnerWrap>
-			<IndexText>Stephanie Jane Scott</IndexText>
+			<IndexText className={indexStyles.indexText}>
+				Stephanie Jane Scott
+			</IndexText>
 
 			<Img
 				fluid={props.data.imageOne.childImageSharp.fluid}
-				className={indexSyles.imgWrap}
+				className={indexStyles.imgWrap}
 			/>
 		</InnerWrap>
-		<Img fluid={props.data.imageTwo.childImageSharp.fluid} />
+		<div className={indexStyles.infoWrap}>
+			<Img
+				fluid={props.data.imageTwo.childImageSharp.fluid}
+				className={indexStyles.infoPic}
+			/>
+			<div className={indexStyles.infoLeft}>
+				<div className={indexStyles.picture} />
+			</div>
+			<div className={indexStyles.infoRight}>
+				<div className={indexStyles.infoBoxOne}>Test</div>
+				<div className={indexStyles.infoBoxTwo}>Test Two</div>
+				<div className={indexStyles.infoTriangles}>
+					<Button />
+					<Button />
+					<Button />
+				</div>
+			</div>
+		</div>
 	</Layout>
 );
 

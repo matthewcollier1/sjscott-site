@@ -1,7 +1,7 @@
 import React from "react";
-import headerStyles from "./header.module.css";
 import { StaticQuery, graphql, Link } from "gatsby";
-import Button from "./Button";
+import Button from "../Button/Button";
+import headerStyles from "./header.module.css";
 
 export default () => (
 	<StaticQuery
@@ -31,6 +31,7 @@ export default () => (
 								<h2>About</h2>
 							</Link>
 						</Button>
+						<Button />
 					</ul>
 				</nav>
 			</div>
